@@ -1,26 +1,27 @@
 import React from 'react';
 import { colors } from '../global/colors';
 import { availableFonts } from '../global/typography';
-import Cart from '../images/cart.png';
+import cart from '../images/cart.png';
 import styled from '@emotion/styled';
 
 function Calculator() {
   return (
     <StyledCalculator className='calculator'>
       <StyledCalculatorHeader className='calculator__header'>
-        <img src={Cart} alt='Cart icon' draggable={false} />
+        <img src={cart} alt='Cart icon' draggable={false} />
         <StyledCalculatorTitle>
-          Add expenses to <span>Groceries</span>
+          Add expenses to{' '}
+          <StyledCalculatorCategory>Groceries</StyledCalculatorCategory>
         </StyledCalculatorTitle>
       </StyledCalculatorHeader>
       <StyledCalculatorDisplay className='calculator__display'>
-        <span>$0</span>
+        <DisplayText>$0</DisplayText>
       </StyledCalculatorDisplay>
       <StyledCalculatorBody className='calculator__body'>
         Body
       </StyledCalculatorBody>
       <StyledCalculatorFooter className='calculator__footer'>
-        <span>Thursday March, 10, 2022</span>
+        <StyledDate>Thursday March, 10, 2022</StyledDate>
       </StyledCalculatorFooter>
     </StyledCalculator>
   );
@@ -41,11 +42,17 @@ const StyledCalculatorHeader = styled.div`
   color: white;
   background-color: ${colors.cyan[500]};
   border-bottom: 1px solid #eee;
+  padding-left: 1rem;
   height: 50px;
 `;
 
 const StyledCalculatorTitle = styled.p`
+  font-weight: 400;
   width: 150px;
+`;
+
+const StyledCalculatorCategory = styled.span`
+  font-weight: 500;
 `;
 
 const StyledCalculatorDisplay = styled.div`
@@ -53,6 +60,12 @@ const StyledCalculatorDisplay = styled.div`
   justify-content: center;
   align-items: center;
   height: 50px;
+`;
+
+const DisplayText = styled.span`
+  letter-spacing: 4px;
+  font-size: 20px;
+  color: ${colors.gray[600]};
 `;
 
 const StyledCalculatorBody = styled.div``;
@@ -68,3 +81,5 @@ const StyledCalculatorFooter = styled.div`
   font-weight: 400;
   line-height: 1rem;
 `;
+
+const StyledDate = styled.span``;
