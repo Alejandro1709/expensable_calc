@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { colors } from '../global/colors';
+import PropTypes from 'prop-types';
 
 function CalculatorDisplay({ currentNumber, prevNumber, operant }) {
   return (
@@ -15,6 +16,12 @@ function CalculatorDisplay({ currentNumber, prevNumber, operant }) {
 }
 
 export default CalculatorDisplay;
+
+CalculatorDisplay.propTypes = {
+  currentNumber: PropTypes.string,
+  prevNumber: PropTypes.string,
+  operant: PropTypes.string,
+};
 
 const StyledCalculatorDisplay = styled.div`
   display: flex;

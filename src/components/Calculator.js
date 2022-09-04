@@ -9,6 +9,7 @@ import CalculatorHeader from './CalculatorHeader';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorFooter from './CalculatorFooter';
 import Pad from './Pad';
+import PropTypes from 'prop-types';
 
 function Calculator(props) {
   const [prevNumber, setPrevNumber] = useState('null');
@@ -210,6 +211,14 @@ function Calculator(props) {
 }
 
 export default Calculator;
+
+Calculator.propTypes = {
+  category: PropTypes.object.isRequired,
+  prevNumber: PropTypes.string,
+  operant: PropTypes.string,
+  currentNumber: PropTypes.string,
+  isOperationReady: PropTypes.bool,
+};
 
 const StyledCalculator = styled.div`
   font-family: ${availableFonts.primary};

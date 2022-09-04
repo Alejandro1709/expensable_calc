@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from '@emotion/styled';
 import { colors } from '../global/colors';
+import PropTypes from 'prop-types';
 
 function Pad({
   category,
@@ -68,6 +69,11 @@ function Pad({
 }
 
 export default Pad;
+
+Pad.propTypes = {
+  value: PropTypes.string,
+  isOperant: PropTypes.bool,
+};
 
 const StyledPad = styled.div`
   display: flex;

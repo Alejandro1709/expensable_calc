@@ -1,6 +1,7 @@
 import React from 'react';
 import cart from '../images/cart.png';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 function CalculatorHeader(props) {
   return (
@@ -20,6 +21,10 @@ function CalculatorHeader(props) {
 }
 
 export default CalculatorHeader;
+
+CalculatorHeader.propTypes = {
+  category: PropTypes.object.isRequired,
+};
 
 const StyledCalculatorHeader = styled.div`
   display: flex;

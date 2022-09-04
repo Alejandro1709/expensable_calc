@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { colors } from '../global/colors';
+import PropTypes from 'prop-types';
 
-function CalculatorFooter() {
+function CalculatorFooter({ date }) {
   return (
     <StyledCalculatorFooter className='calculator__footer'>
-      <StyledDate>Sunday September, 04, 2022</StyledDate>
+      <StyledDate>{date}</StyledDate>
     </StyledCalculatorFooter>
   );
 }
 
 export default CalculatorFooter;
+
+CalculatorFooter.propTypes = {
+  date: PropTypes.string,
+};
 
 const StyledCalculatorFooter = styled.div`
   display: flex;
