@@ -94,7 +94,7 @@ function Calculator(props) {
           currentNumber
           prevNumber={prevNumber}
           operant={operant}
-          onPadClick={() => setCurrentNumber(currentNumber + '0')}
+          onPadClick={() => setCurrentNumber('')}
         />
         {/* Third Row */}
         <Pad
