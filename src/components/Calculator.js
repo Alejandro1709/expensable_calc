@@ -22,34 +22,69 @@ function Calculator() {
       </StyledCalculatorDisplay>
       <StyledCalculatorBody className='calculator__pads'>
         {/* First Row */}
-        <StyledPad className='pads__pad'>÷</StyledPad>
-        <StyledPad className='pads__pad'>1</StyledPad>
-        <StyledPad className='pads__pad'>2</StyledPad>
-        <StyledPad className='pads__pad'>3</StyledPad>
-        <StyledPad className='pads__pad'>
+        <StyledPad className='pads__pad btn'>
+          <span>÷</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>1</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>2</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>3</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
           <img src={backspace} alt='backspace icon' draggable={false} />
         </StyledPad>
         {/* Second Row */}
-        <StyledPad className='pads__pad'>x</StyledPad>
-        <StyledPad className='pads__pad'>4</StyledPad>
-        <StyledPad className='pads__pad'>5</StyledPad>
-        <StyledPad className='pads__pad'>6</StyledPad>
-        <StyledPad className='pads__pad'>C</StyledPad>
-        {/* Third Row */}
-        <StyledPad className='pads__pad'>-</StyledPad>
-        <StyledPad className='pads__pad'>7</StyledPad>
-        <StyledPad className='pads__pad'>8</StyledPad>
-        <StyledPad className='pads__pad'>9</StyledPad>
-        <StyledPad className='pads__pad'>
-          <img src={checkmark} alt='checkmark icon' draggable={false} />
+        <StyledPad className='pads__pad btn'>
+          <span>x</span>
         </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>4</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>5</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>6</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>C</span>
+        </StyledPad>
+        {/* Third Row */}
+        <StyledPad className='pads__pad btn'>
+          <span>-</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>7</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>8</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>9</span>
+        </StyledPad>
+        <StyledPadDone className='pads__pad don'>
+          <img src={checkmark} alt='checkmark icon' draggable={false} />
+        </StyledPadDone>
         {/* Fourth Row */}
-        <StyledPad className='pads__pad'>+</StyledPad>
-        <StyledPad className='pads__pad'>
+        <StyledPad className='pads__pad btn'>
+          <span>+</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
           <img src={calendar} alt='calendar icon' draggable={false} />
         </StyledPad>
-        <StyledPad className='pads__pad'>0</StyledPad>
-        <StyledPad className='pads__pad'>.</StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>0</span>
+        </StyledPad>
+        <StyledPad className='pads__pad btn'>
+          <span>.</span>
+        </StyledPad>
+        <StyledPad className='pads__pad don'>
+          <span>.</span>
+        </StyledPad>
       </StyledCalculatorBody>
       <StyledCalculatorFooter className='calculator__footer'>
         <StyledDate>Thursday March, 10, 2022</StyledDate>
@@ -65,6 +100,7 @@ const StyledCalculator = styled.div`
   border: 1px solid #eee;
   border-radius: 8px;
   overflow: hidden;
+  user-select: none;
   width: 254px;
 `;
 
@@ -112,9 +148,16 @@ const StyledPad = styled.div`
   align-items: center;
   height: 50px;
   border: 0.5px solid #eee;
-  /* &:last-child {
-    background-color: ${colors.cyan[500]};
-  } */
+  cursor: pointer;
+`;
+
+const StyledPadDone = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row-start: 3 / 6;
+  background-color: ${colors.cyan[500]};
+  cursor: pointer;
 `;
 
 const StyledCalculatorFooter = styled.div`
