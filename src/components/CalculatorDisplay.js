@@ -2,10 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { colors } from '../global/colors';
 
-function CalculatorDisplay({ currentNumber }) {
+function CalculatorDisplay({ currentNumber, prevNumber, operant }) {
   return (
-    <StyledCalculatorDisplay className='calculator__display'>
-      <DisplayText>${currentNumber}</DisplayText>
+    <StyledCalculatorDisplay>
+      <DisplayText>
+        ${prevNumber !== 'null' ? prevNumber : ''}
+        {operant !== 'null' ? operant : ''}
+        {currentNumber ? currentNumber : '0'}
+      </DisplayText>
     </StyledCalculatorDisplay>
   );
 }
