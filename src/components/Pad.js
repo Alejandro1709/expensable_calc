@@ -25,7 +25,6 @@ function Pad({
     } else {
       if (currentNumber === 0 && value === '0') return;
       if (value === '.') currentNumber += `${value}.`;
-      console.log(value);
       onPadClick();
     }
   };

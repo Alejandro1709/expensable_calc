@@ -23,6 +23,37 @@ function Calculator(props) {
     setOperant(value);
   };
 
+  const handleBackTrack = () => {
+    // If the currentNumber only has 1 digit and the prevNumber and operant are null, the currentNumber should change to 0.
+    // If the currentNumber only has 1 digit but the prevNumber and operant are not null, the currentNumber should be set to null.
+    // If the currentNumber is null and the prevNumber and operant are not null, then the currentNumber takes the value of the prevNumber and the prevNumber and operant should be set to null.
+    console.log('Yooo');
+    if (
+      currentNumber.length === 1 &&
+      prevNumber === 'null' &&
+      operant === 'null'
+    ) {
+      setCurrentNumber('0');
+    }
+    if (
+      currentNumber.length === 1 &&
+      prevNumber !== 'null' &&
+      operant !== 'null'
+    ) {
+      setCurrentNumber('null');
+    }
+
+    if (
+      currentNumber === 'null' &&
+      prevNumber !== 'null' &&
+      operant !== 'null'
+    ) {
+      setCurrentNumber(prevNumber);
+      setPrevNumber('null');
+      setOperant('null');
+    }
+  };
+
   return (
     <StyledCalculator className='calculator'>
       <CalculatorHeader category={props.category} />
@@ -59,7 +90,12 @@ function Calculator(props) {
           operant={operant}
           onPadClick={() => setCurrentNumber(currentNumber + '3')}
         />
-        <Pad>
+        <Pad
+          currentNumber
+          prevNumber={prevNumber}
+          operant={operant}
+          onPadClick={() => handleBackTrack()}
+        >
           <img src={backspace} alt='backspace icon' draggable={false} />
         </Pad>
         {/* Second Row */}
